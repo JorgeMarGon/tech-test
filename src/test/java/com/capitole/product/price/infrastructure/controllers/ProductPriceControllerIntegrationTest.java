@@ -11,7 +11,6 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.ResultActions;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -31,9 +30,8 @@ public class ProductPriceControllerIntegrationTest {
   void getProductPrice_returnsProductPriceODTO(String date, String brandId, String expectedResult)
       throws Exception {
 
-        mvc.perform(
-                get("/product/35455/price").queryParam("date", date).queryParam("brandId", brandId))
-            .andExpect(status().isOk())
-            .andExpectAll(jsonPath("$.price").value(expectedResult));
+    mvc.perform(get("/product/35455/price").queryParam("date", date).queryParam("brandId", brandId))
+        .andExpect(status().isOk())
+        .andExpectAll(jsonPath("$.price").value(expectedResult));
   }
 }

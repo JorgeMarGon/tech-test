@@ -2,8 +2,6 @@ package com.capitole.product.price.domain.models;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import ch.qos.logback.classic.Level;
-import ch.qos.logback.classic.Logger;
 import com.capitole.common.domain.exceptions.RestApiException;
 import com.capitole.product.price.domain.errors.ProductPriceErrorCode;
 import java.time.LocalDateTime;
@@ -14,7 +12,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.slf4j.LoggerFactory;
 import uk.co.jemos.podam.api.PodamFactory;
 import uk.co.jemos.podam.api.PodamFactoryImpl;
 import uk.co.jemos.podam.common.PodamCollection;

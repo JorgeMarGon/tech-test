@@ -19,6 +19,7 @@ public class RestApiError implements Serializable {
 
   @JsonIgnore private transient HttpStatus status;
   @JsonIgnore private transient RestApiErrorCode code;
+  private String error;
   private String message;
 
   public RestApiError(RestApiErrorCode code) {
@@ -29,6 +30,7 @@ public class RestApiError implements Serializable {
     this.timestamp = Instant.now();
     this.status = status;
     this.code = code;
+    this.error = code.getName();
     this.message = code.getMessage();
   }
 }

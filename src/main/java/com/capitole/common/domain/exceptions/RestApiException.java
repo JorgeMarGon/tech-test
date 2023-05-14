@@ -13,7 +13,7 @@ public class RestApiException extends RuntimeException {
   protected final RestApiError error;
 
   public RestApiException(RestApiErrorCode code, HttpStatus status) {
-    super(String.format("Error: %s", code.getValue()));
+    super(String.format("Error: %s", code.getName()));
     error = new RestApiError(status, code);
   }
 }
